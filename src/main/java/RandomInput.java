@@ -10,9 +10,10 @@ public class RandomInput extends Input{
         }
     }
 
-    private int maxNumber = 5;
+    private int maxNumber;
 
     RandomInput(int maxNumber){
+        this();
         this.maxNumber = maxNumber;
     }
 
@@ -20,7 +21,6 @@ public class RandomInput extends Input{
         this.maxNumber = maxNumber;
     }
 
-    @Override
     public int getMaxNumber() {
         return maxNumber;
     }

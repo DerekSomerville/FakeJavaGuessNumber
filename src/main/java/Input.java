@@ -20,7 +20,4 @@ public abstract class Input extends Display{
         return result;
     }
 
-    public int getMaxNumber(){
-        return 5;
-    }
 }

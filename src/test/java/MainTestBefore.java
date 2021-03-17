@@ -4,11 +4,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MainTest {
+class MainTestBefore {
 
     @Test
     void play() {
-
         ReadFromFile readFromFile = new ReadFromFile();
         TestOutput testOutput = new TestOutput();
         List<String> recordedOutput = readFromFile.readList("ConsoleOutput.csv");
