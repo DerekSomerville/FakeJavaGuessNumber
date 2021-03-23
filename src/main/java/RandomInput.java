@@ -18,6 +18,7 @@ public class RandomInput extends Input{
     }
 
     public void setMaxNumber(int maxNumber) {
+
         this.maxNumber = maxNumber;
     }
 
