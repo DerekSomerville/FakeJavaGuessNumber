@@ -32,8 +32,20 @@ class MainTestAfter {
         assertEquals(recordedOutput,testOutput.getTestOutputs());
     }
 
-    private List<String> convertToLIst(String listToConvert){
+    private List<String> convertToList(String listToConvert){
         return new ArrayList<String>(Arrays.asList(listToConvert.split(",")));
+    }
+
+
+    private Main getMainWithTestData(TestOutput testOutput, String userInput, String randomInput){
+
+        ReadFromFile readFromFile = new ReadFromFile();
+        TestInput userTestInput = new TestInput();
+        userTestInput.setTestInputs(convertToList(userInput));
+        TestInput randomTestInput = new TestInput();
+        randomTestInput.setTestInputs(convertToList(randomInput));
+        Main main = new Main(testOutput,userTestInput,randomTestInput);
+        return main;
     }
 
     @Test
@@ -45,15 +57,9 @@ class MainTestAfter {
                 "Correct," +
                 "Please guess a number from 0 to 5," +
                 "Please guess a number from 0 to 5";
-        String userInput = "1,5,9";
-        String randomInputString = "1,2,4";
-        TestInput userTestInput = new TestInput();
-        userTestInput.setTestInputs(convertToLIst(userInput));
-        TestInput randomInput = new TestInput();
-        randomInput.setTestInputs(convertToLIst(randomInputString));
-        Main main = new Main(testOutput,userTestInput,randomInput);
+        Main main = getMainWithTestData(testOutput,"1,5,9","1,2,4");
         main.play();
-        assertEquals(convertToLIst(output).toString(),testOutput.getTestOutputs().toString());
+        assertEquals(convertToList(output).toString(),testOutput.getTestOutputs().toString());
     }
 
 
