@@ -9,6 +9,7 @@ public class ConsoleInput extends Input{
             fileWritter = new WriteToFile(className + ".csv");
         }
     }
+
     public String getInputString(){
         Scanner userInput = new Scanner(System.in);
         String result = userInput.nextLine();
